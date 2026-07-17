@@ -1,0 +1,768 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hak Yany - Full-stack Web Developer & UX/UI Designer">
+    <title>Sat Pisey - Full-stack Developer & Fullter Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/icon.jpg" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#0ea5a4',
+                            dark: '#0d8c8b',
+                            light: '#10b8b7'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+
+    <!-- Navigation -->
+    <nav
+        class="fixed top-0 w-full bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm z-50 border-b border-gray-200 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+        <a href="#" class="text-xl font-bold text-primary">Sat Pisey</a>
+
+    <!-- Desktop Nav -->
+        <div class="hidden md:flex items-center space-x-8">
+        <a href="#about" class="hover:text-primary transition-colors">About</a>
+        <a href="#skills" class="hover:text-primary transition-colors">Skills</a>
+        <a href="#projects" class="hover:text-primary transition-colors">Projects</a>
+        <a href="#experience" class="hover:text-primary transition-colors">Experience</a>
+        <a href="#contact" class="hover:text-primary transition-colors">Contact</a>
+        <button id="themeToggle"
+        class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+        aria-label="Toggle dark mode">
+        <svg class="w-5 h-5 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
+        <path
+        d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z">
+    </path>
+    </svg>
+        <svg class="w-5 h-5 dark:hidden" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+    </svg>
+    </button>
+    </div>
+        <!-- Mobile menu button -->
+        <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
+        aria-label="Open menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M4 6h16M4 12h16M4 18h16"></path>
+        <path id="closeIcon" class="hidden" stroke-linecap="round" stroke-linejoin="round"
+        stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+    </svg>
+    </button>
+    </div>
+        </div>
+
+    <!-- Mobile Nav -->
+        <div id="mobileMenu" class="hidden md:hidden border-t border-gray-200 dark:border-gray-800">
+        <div class="px-4 py-4 space-y-3">
+        <a href="#about" class="block py-2 hover:text-primary transition-colors">About</a>
+        <a href="#skills" class="block py-2 hover:text-primary transition-colors">Skills</a>
+        <a href="#projects" class="block py-2 hover:text-primary transition-colors">Projects</a>
+        <a href="#experience" class="block py-2 hover:text-primary transition-colors">Experience</a>
+        <a href="#contact" class="block py-2 hover:text-primary transition-colors">Contact</a>
+        <button id="mobileThemeToggle"
+        class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+        aria-label="Toggle dark mode">
+        <svg class="w-5 h-5 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
+        <path
+        d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414z">
+    </path>
+    </svg>
+        <svg class="w-5 h-5 dark:hidden" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+    </svg>
+    </button>
+    </div>
+</div>
+    </nav>
+    <main>
+    <!-- Hero Section -->
+        <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto">
+    <!-- Profile Image -->
+        <div class="profile-image mb-8 animate-scaleIn">
+        <img src="img/me1.jpg" alt="Sat Pisey Profile">
+    </div>
+        <h1
+        class="text-5xl sm:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-primary-dark bg-clip-text text-transparent animate-fadeInUp stagger-1">
+        Sat Pisey
+    </h1>
+        <p class="text-2xl sm:text-3xl text-gray-600 dark:text-gray-300 mb-4 animate-fadeInUp stagger-2">
+        Full-stack Developer & Fullter Developer
+    </p>
+        <p
+        class="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto animate-fadeInUp stagger-3">
+        Crafting beautiful, scalable web applications and intuitive user experiences that solve real
+        problems and delight users.
+    </p>
+        <div class="flex flex-wrap justify-center gap-4 animate-fadeInUp stagger-4">
+        <a href="#projects"
+        class="px-8 py-3 bg-primary hover:bg-primary-dark text-white rounded-lg font-medium transition-all hover:scale-105">
+        View Projects
+        </a>
+        <a href="#resume.pdf" download
+        class="px-8 py-3 border-2 border-primary text-primary hover:bg-primary hover:text-white rounded-lg font-medium transition-all hover:scale-105">
+        Download Résumé
+    </a>
+    </div>
+    </div>
+    </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800/50">
+    <div class="max-w-5xl mx-auto">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-center scroll-animate">About Me</h2>
+    <div class="prose prose-lg dark:prose-invert max-w-none mb-12">
+    <p class="text-gray-600 dark:text-gray-300 leading-relaxed scroll-animate">
+        I'm a full-stack developer and Fullter Developer with a passion for creating seamless digital
+        experiences. My journey combines technical expertise in Laravel, React, and modern web
+        technologies with a deep understanding of user-centered design principles. I believe great
+        products are born at the intersection of beautiful design and robust engineering.
+    </p>
+    <p class="text-gray-600 dark:text-gray-300 leading-relaxed scroll-animate">
+        From wireframing in Figma to deploying scalable applications, I handle the entire product
+        lifecycle. Whether it's building a complex e-commerce platform or designing an intuitive mobile
+        interface, I focus on creating solutions that are both visually stunning and technically sound.
+    </p>
+    </div>
+
+    <!-- Quick Stats -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+         <div
+         class="bg-white dark:bg-gray-900 p-6 rounded-lg text-center border border-gray-200 dark:border-gray-700 scroll-animate hover:border-primary transition-colors">
+        <div class="text-3xl font-bold text-primary mb-2">1+</div>
+        <div class="text-gray-600 dark:text-gray-400">Years Experience</div>
+    </div>
+        <div
+        class="bg-white dark:bg-gray-900 p-6 rounded-lg text-center border border-gray-200 dark:border-gray-700 scroll-animate hover:border-primary transition-colors">
+        <div class="text-3xl font-bold text-primary mb-2">10+</div>
+        <div class="text-gray-600 dark:text-gray-400">Projects Completed</div>
+    </div>
+        <div
+        class="bg-white dark:bg-gray-900 p-6 rounded-lg text-center border border-gray-200 dark:border-gray-700 scroll-animate hover:border-primary transition-colors">
+        <div class="text-3xl font-bold text-primary mb-2">10+</div>
+        <div class="text-gray-600 dark:text-gray-400">Technologies</div>
+        </div>
+    </div>
+    </div>
+    </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-center scroll-animate">Skills & Technologies</h2>
+            <div class="space-y-8">
+        <!-- Development -->
+            <div class="scroll-animate">
+            <h3 class="text-xl font-semibold mb-4 text-primary">Development</h3>
+            <div class="flex flex-wrap gap-3">
+            <span
+                m class="px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full text-sm font-medium border border-green-200 dark:border-green-800 hover:scale-105 transition-transform">
+                 Laravel <span class="text-xs ml-1">(Advanced)</span>
+            </span>
+            <span
+                class="px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full text-sm font-medium border border-green-200 dark:border-green-800 hover:scale-105 transition-transform">
+                PHP <span class="text-xs ml-1">(Advanced)</span>
+            </span>
+                <span
+                class="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-medium border border-blue-200 dark:border-blue-800 hover:scale-105 transition-transform">
+                 React <span class="text-xs ml-1">(Comfortable)</span>
+            </span>
+                <span
+                class="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-medium border border-blue-200 dark:border-blue-800 hover:scale-105 transition-transform">
+                JavaScript <span class="text-xs ml-1">(Comfortable)</span>
+            </span>
+                <span
+                class="px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300 rounded-full text-sm font-medium border border-gray-200 dark:border-gray-700 hover:scale-105 transition-transform">
+                Vue.js <span class="text-xs ml-1">(Beginner)</span>
+            </span>
+            </div>
+            </div>
+
+            <!-- Design -->
+                <div class="scroll-animate">
+                    <h3 class="text-xl font-semibold mb-4 text-primary">Fullter Developer</h3>
+                    <div class="flex flex-wrap gap-3">
+                    <span
+                    class="px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full text-sm font-medium border border-green-200 dark:border-green-800 hover:scale-105 transition-transform">
+                    Figma <span class="text-xs ml-1">(Advanced)</span>
+                </span>
+                    <span
+                    class="px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full text-sm font-medium border border-green-200 dark:border-green-800 hover:scale-105 transition-transform">
+                    Tailwind CSS <span class="text-xs ml-1">(Advanced)</span>
+                </span>
+                    <span
+                    class="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-medium border border-blue-200 dark:border-blue-800 hover:scale-105 transition-transform">
+                    Adobe XD <span class="text-xs ml-1">(Comfortable)</span>
+                </span>
+                    <span
+                    class="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-medium border border-blue-200 dark:border-blue-800 hover:scale-105 transition-transform">
+                    User Research <span class="text-xs ml-1">(Comfortable)</span>
+                </span>
+                    <span
+                    class="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-medium border border-blue-200 dark:border-blue-800 hover:scale-105 transition-transform">
+                    Prototyping <span class="text-xs ml-1">(Comfortable)</span>
+                </span>
+                </div>
+                </div>
+
+            <!-- Database -->
+                <div class="scroll-animate">
+                <h3 class="text-xl font-semibold mb-4 text-primary">Database</h3>
+                <div class="flex flex-wrap gap-3">
+            <span
+                class="px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full text-sm font-medium border border-green-200 dark:border-green-800 hover:scale-105 transition-transform">
+                MySQL <span class="text-xs ml-1">(Advanced)</span>
+            </span>
+                <span
+                class="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-medium border border-blue-200 dark:border-blue-800 hover:scale-105 transition-transform">
+                PostgreSQL <span class="text-xs ml-1">(Comfortable)</span>
+            </span>
+                <span
+                class="px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300 rounded-full text-sm font-medium border border-gray-200 dark:border-gray-700 hover:scale-105 transition-transform">
+                MongoDB <span class="text-xs ml-1">(Beginner)</span>
+            </span>
+            </div>
+            </div>
+        <!-- Tools -->
+            <div class="scroll-animate">
+            <h3 class="text-xl font-semibold mb-4 text-primary">Tools & Others</h3>
+            <div class="flex flex-wrap gap-3">
+            <span
+            class="px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full text-sm font-medium border border-green-200 dark:border-green-800 hover:scale-105 transition-transform">
+            Git <span class="text-xs ml-1">(Advanced)</span>
+        </span>
+            <span
+            class="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-medium border border-blue-200 dark:border-blue-800 hover:scale-105 transition-transform">
+            Docker <span class="text-xs ml-1">(Comfortable)</span>
+        </span>
+        <span
+            class="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-medium border border-blue-200 dark:border-blue-800 hover:scale-105 transition-transform">
+            Linux <span class="text-xs ml-1">(Comfortable)</span>
+        </span>
+            <span
+            class="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-medium border border-blue-200 dark:border-blue-800 hover:scale-105 transition-transform">
+            REST APIs <span class="text-xs ml-1">(Comfortable)</span>
+            </span>
+        </div>
+            </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800/50">
+            <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-center scroll-animate">Featured Projects</h2>
+            <p class="text-center text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto scroll-animate">
+            A collection of development and design work showcasing full-stack applications and UX/UI projects
+            </p>
+
+        <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12 scroll-animate">
+        <button
+            class="filter-btn px-6 py-2 rounded-full border-2 border-primary bg-primary text-white font-medium transition-all hover:scale-105"
+            data-filter="all">
+            All Projects
+        </button>
+        <button
+            class="filter-btn px-6 py-2 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white font-medium transition-all hover:scale-105"
+            data-filter="development">
+                Development
+        </button>
+        <button
+            class="filter-btn px-6 py-2 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white font-medium transition-all hover:scale-105"
+            data-filter="design">
+                 Data Sience
+        </button>
+        </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projectsGrid">
+    <!-- Development Project 1 -->
+        <article
+            class="project-card bg-white dark:bg-gray-900 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 hover:shadow-xl cursor-pointer scroll-animate relative"
+            data-project="1" data-category="development">
+        <span
+            class="project-type-badge px-3 py-1 bg-blue-500 text-white text-xs font-semibold rounded-full">Developer</span>
+            <div class="h-48 relative overflow-hidden">
+            <img src="img/projectcover.png" alt="Project cover" class="w-full h-full object-cover">
+            <div class="project-overlay flex items-end p-4">
+            <span class="text-white font-semibold">Click to view details</span>
+        </div>
+        </div>
+            <div class="p-6">
+            <div class="flex items-center justify-between mb-2">
+            <h3 class="text-xl font-semibold">CPA Website – Carbon Measurement in Cambodia</h3>
+            <span class="text-sm text-gray-500 dark:text-gray-400">2024</span>
+        </div>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">
+            Full-featured online store with payment integration and inventory management
+        </p>
+            <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs">Laravel</span>
+            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs">MySQL</span>
+            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs">Tailwind</span>
+        </div>
+        </div>
+        </article>
+    <!-- Design Project 1 -->
+        <article
+            class="project-card bg-white dark:bg-gray-900 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 hover:shadow-xl cursor-pointer scroll-animate relative"
+            data-project="7" data-category="design">
+        <span
+            class="project-type-badge px-3 py-1 bg-purple-500 text-white text-xs font-semibold rounded-full">UX/UI
+            Design</span>
+            <div class="h-48 relative overflow-hidden">
+            <img src="img/projectcover.png" alt="Project cover" class="w-full h-full object-cover">
+            <div class="project-overlay flex items-end p-4">
+            <span class="text-white font-semibold">Click to view details</span>
+        </div>
+        </div>
+            <div class="p-6">
+            <div class="flex items-center justify-between mb-2">
+            <h3 class="text-xl font-semibold">Food Delivery App</h3>
+            <span class="text-sm text-gray-500 dark:text-gray-400">2024</span>
+        </div>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">
+            Complete redesign for seamless Food Delivery App experience
+        </p>
+            <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs">Figma</span>
+        <span
+            class="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs">Prototyping</span>
+            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs">User
+            Testing</span>
+        </div>
+        </div>
+        </article>
+
+    <!-- Development Project 2 -->
+        <article
+        class="project-card bg-white dark:bg-gray-900 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 hover:shadow-xl cursor-pointer scroll-animate relative"
+        data-project="2" data-category="development">
+    <span
+        class="project-type-badge px-3 py-1 bg-blue-500 text-white text-xs font-semibold rounded-full">Developer</span>
+        <div class="h-48 relative overflow-hidden">
+        <img src="img/projectcover.png" alt="Project cover" class="w-full h-full object-cover">
+        <div class="project-overlay flex items-end p-4">
+        <span class="text-white font-semibold">Click to view details</span>
+    </div>
+    </div>
+        <div class="p-6">
+        <div class="flex items-center justify-between mb-2">
+        <h3 class="text-xl font-semibold">SP4All Website – Social Protection Awareness</h3>
+        <span class="text-sm text-gray-500 dark:text-gray-400">2023</span>
+        </div>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+        Real-time data visualization dashboard for business intelligence
+    </p>
+        <div class="flex flex-wrap gap-2">
+        <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs">React</span>
+        <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs">Node.js</span>
+        <span
+        class="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs">PostgreSQL</span>
+    </div>
+    </div>
+    </article>
+    <!-- Design Project 2 -->
+        <article
+        class="project-card bg-white dark:bg-gray-900 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 hover:shadow-xl cursor-pointer scroll-animate relative"
+        data-project="8" data-category="design">
+    <span
+        class="project-type-badge px-3 py-1 bg-purple-500 text-white text-xs font-semibold rounded-full">UX/UI
+        Design</span>
+        <div class="h-48 relative overflow-hidden">
+        <img src="img/projectcover.png" alt="Project cover" class="w-full h-full object-cover">
+        <div class="project-overlay flex items-end p-4">
+        <span class="text-white font-semibold">Click to view details</span>
+    </div>
+        </div>
+        <div class="p-6">
+        <div class="flex items-center justify-between mb-2">
+        <h3 class="text-xl font-semibold">Inner Sparrow App</h3>
+        <span class="text-sm text-gray-500 dark:text-gray-400">2024</span>
+    </div>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+        Sleek e-commerce app delivering a seamless shopping experience for men’s underwear
+    </p>
+        <div class="flex flex-wrap gap-2">
+        <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs">Figma</span>
+        <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs">Design
+        System</span>
+        <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs">WCAG</span>
+    </div>
+    </div>
+    </article>
+        <!-- Development Project 3 -->
+        <article
+        class="project-card bg-white dark:bg-gray-900 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 hover:shadow-xl cursor-pointer scroll-animate relative"
+        data-project="3" data-category="development">
+    <span
+        class="project-type-badge px-3 py-1 bg-blue-500 text-white text-xs font-semibold rounded-full">Developer</span>
+        <div class="h-48 relative overflow-hidden">
+        <img src="img/projectcover.png" alt="Project cover" class="w-full h-full object-cover">
+        <div class="project-overlay flex items-end p-4">
+        <span class="text-white font-semibold">Click to view details</span>
+    </div>
+    </div>
+        <div class="p-6">
+        <div class="flex items-center justify-between mb-2">
+        <h3 class="text-xl font-semibold">Snif Website – National Investment Management Council
+    </h3>
+        <span class="text-sm text-gray-500 dark:text-gray-400">2024</span>
+    </div>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+            A modern web application for managing investment portfolios.
+        </p>
+        <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs">PHP</span>
+            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs">Laravel</span>
+            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs">Vue.js</span>
+        </div>
+        </div>
+        </article>
+        <!-- Development Project 4 -->
+    <article
+        class="project-card bg-white dark:bg-gray-900 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 hover:shadow-xl cursor-pointer scroll-animate relative"
+        data-project="4" data-category="development">
+        <span
+        class="project-type-badge px-3 py-1 bg-blue-500 text-white text-xs font-semibold rounded-full">Development</span>
+        <div class="h-48 relative overflow-hidden">
+        <img src="img/projectcover.png" alt="Project cover" class="w-full h-full object-cover">
+        <div class="project-overlay flex items-end p-4">
+        <span class="text-white font-semibold">Click to view details</span>
+    </div>
+    </div>
+        <div class="p-6">
+        <div class="flex items-center justify-between mb-2">
+        <h3 class="text-xl font-semibold">CNDD E-Learning Website</h3>
+        <span class="text-sm text-gray-500 dark:text-gray-400">2024</span>
+    </div>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+    </p>
+        <div class="flex flex-wrap gap-2">
+        <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs">PHP</span>
+        <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs">Laravel</span>
+        <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs">Node.js</span>
+    </div>
+    </div>
+    </article>
+    <!-- Development Project 5 -->
+        <article
+        class="project-card bg-white dark:bg-gray-900 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 hover:shadow-xl cursor-pointer scroll-animate relative"
+        data-project="5" data-category="development">
+    <span
+        class="project-type-badge px-3 py-1 bg-blue-500 text-white text-xs font-semibold rounded-full">Development</span>
+        <div class="h-48 relative overflow-hidden">
+        <img src="img/projectcover.png" alt="Project cover" class="w-full h-full object-cover">
+        <div class="project-overlay flex items-end p-4">
+        <span class="text-white font-semibold">Click to view details</span>
+    </div>
+    </div>
+        <div class="p-6">
+        <div class="flex items-center justify-between mb-2">
+        <h3 class="text-xl font-semibold">Mobi Pilates Website</h3>
+        <span class="text-sm text-gray-500 dark:text-gray-400">2025</span>
+    </div>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+            A modern website for a Pilates studio offering online booking and class scheduling.
+        </p>
+        <div class="flex flex-wrap gap-2">
+        <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs">PHP</span>
+        <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs">Laravel</span>
+        <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs">Vue.js</span>
+    </div>
+    </div>
+    </article>
+
+    <!-- Design Project 3 -->
+        <article
+        class="project-card bg-white dark:bg-gray-900 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 hover:shadow-xl cursor-pointer scroll-animate relative"
+        data-project="9" data-category="design">
+    <span
+        class="project-type-badge px-3 py-1 bg-purple-500 text-white text-xs font-semibold rounded-full">UX/UI
+        Design</span>
+        <div class="h-48 relative overflow-hidden">
+        <img src="img/projectcover.png" alt="Project cover" class="w-full h-full object-cover">
+        <div class="project-overlay flex items-end p-4">
+        <span class="text-white font-semibold">Click to view details</span>
+    </div>
+    </div>
+        <div class="p-6">
+        <div class="flex items-center justify-between mb-2">
+        <h3 class="text-xl font-semibold">Online Home Service Management Platform</h3>
+        <span class="text-sm text-gray-500 dark:text-gray-400">2024</span>
+        </div>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+            Design a modern web platform connecting service providers with customers for home
+            services, ensuring seamless booking, service management, and user-friendly experience
+            for both parties.
+    </p>
+        <div class="flex flex-wrap gap-2">
+        <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs">Adobe XD</span>
+        <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs">User Flow</span>
+    <span
+        class="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs">Wireframing</span>
+    </div>
+    </div>
+        </article>
+        </div>
+        </div>
+        </section>
+    <!-- Experience Section -->
+       <section id="experience" class="py-20 px-4 sm:px-6 lg:px-8">
+          <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-center scroll-animate">
+              Work Experience
+            </h2>
+        
+        <div class="space-y-8">
+    <!-- Experience 1 -->
+        <article class="bg-white dark:bg-gray-900 p-6 rounded-lg border border-gray-200 dark:border-gray-700 scroll-animate hover:border-primary transition-colors">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+    <div>
+        <h3 class="text-xl font-semibold">Web Developer (PHP & Laravel)</h3>
+        <p class="text-primary font-medium">TITB</p>
+    </div>
+        <span class="text-gray-500 dark:text-gray-400 text-sm mt-2 sm:mt-0">
+        Nov 2024 – Sep 2025
+    </span>
+    </div>
+        <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+        <li class="flex items-start">
+        <span class="text-primary mr-2">▹</span>
+    <span>
+        Developed and maintained web applications using PHP and Laravel,
+        focusing on clean structure and reusable components
+    </span>
+    </li>
+        <li class="flex items-start">
+        <span class="text-primary mr-2">▹</span>
+    <span>
+        Worked with open-source CMS platforms including OctoberCMS and Moodle LMS
+        for content and learning management systems
+    </span>
+    </li>
+        <li class="flex items-start">
+        <span class="text-primary mr-2">▹</span>
+    <span>
+        Customized backend logic, forms, and database relationships based on
+        real project requirements
+    </span>
+    </li>
+        <li class="flex items-start">
+        <span class="text-primary mr-2">▹</span>
+    <span>
+        Collaborated with team members to fix bugs, improve performance,
+        and deploy updates
+    </span>
+    </li>
+    </ul>
+    </article>
+        <!-- Experience 2 -->
+            <article class="bg-white dark:bg-gray-900 p-6 rounded-lg border border-gray-200 dark:border-gray-700 scroll-animate hover:border-primary transition-colors">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+        <div>
+            <h3 class="text-xl font-semibold">Web Developer (Core Banking System)</h3>
+            <p class="text-primary font-medium">FinzTrust Technology</p>
+        </div>
+            <span class="text-gray-500 dark:text-gray-400 text-sm mt-2 sm:mt-0">
+            Sep 2025 – Now
+        </span>
+        </div>
+            <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+            <li class="flex items-start">
+            <span class="text-primary mr-2">▹</span>
+        <span>
+            Worked on core banking system modules using Java,
+            following enterprise-level development practices
+        </span>
+        </li>
+            <li class="flex items-start">
+            <span class="text-primary mr-2">▹</span>
+        <span>
+            Assisted in maintaining backend services, data validation,
+            and transaction-related logic
+        </span>
+        </li>
+            <li class="flex items-start">
+            <span class="text-primary mr-2">▹</span>
+        <span>
+            Learned banking workflows, security awareness,
+            and structured coding standards in a financial system
+        </span>
+        </li>
+            </ul>
+            </article>
+            </div>
+          </div>
+        </section>
+                <!-- Education -->
+      <section id="experience" class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="mt-16">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-center scroll-animate">Education</h2>
+        <article
+        class="bg-white dark:bg-gray-900 p-6 rounded-lg border border-gray-200 dark:border-gray-700 scroll-animate hover:border-primary transition-colors">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+    <div>
+        <h3 class="text-xl font-semibold">Bachelor of Science in Computer Information Technology Communication & Management</h3>
+        <p class="text-primary font-medium">Norton University</p>
+    </div>
+        <span class="text-gray-500 dark:text-gray-400 text-sm mt-2 sm:mt-0">2017 - 2021</span>
+    </div>
+        <p class="text-gray-600 dark:text-gray-400 mb-3">
+        GPA: 3.8/4.0 | Dean's List (4 semesters)
+    </p>
+        <p class="text-gray-600 dark:text-gray-400 mb-3">
+        <strong>Relevant Coursework:</strong> Web Development, Database Systems, Software
+        Engineering, Data Structures & Algorithms, Computer Networks
+    </p>
+        <p class="text-gray-600 dark:text-gray-400">
+        <strong>Capstone Project:</strong> E-Learning Platform with AI-powered recommendations
+        (Laravel + React) -
+        <a href="#" class="text-primary hover:underline">View Thesis</a>
+    </p>
+    </article>
+    </div>
+
+        <!-- Certificates & Awards -->
+        <div class="mt-12">
+        <h3 class="text-2xl font-bold mb-6 text-center scroll-animate">Certificates & Awards</h3>
+        <div class="flex flex-wrap justify-center gap-4 scroll-animate">
+        <span
+        class="px-4 py-2 bg-primary/10 border border-primary/20 rounded-lg text-sm hover:scale-105 transition-transform">
+        AWS Certified Developer (2023)
+    </span>
+        <span
+        class="px-4 py-2 bg-primary/10 border border-primary/20 rounded-lg text-sm hover:scale-105 transition-transform">
+        Best Innovation Award - Hackathon 2022
+        </span>
+        <span
+        class="px-4 py-2 bg-primary/10 border border-primary/20 rounded-lg text-sm hover:scale-105 transition-transform">
+        Laravel Certified Developer (2023)
+    </span>
+        <span
+        class="px-4 py-2 bg-primary/10 border border-primary/20 rounded-lg text-sm hover:scale-105 transition-transform">
+         Google UX Design Certificate (2022)
+    </span>
+        </div>
+        </div>
+    </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800/50">
+            <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6 scroll-animate">Let's Work Together</h2>
+            <p class="text-gray-600 dark:text-gray-400 mb-12 scroll-animate">
+            I'm always interested in hearing about new projects and opportunities. Whether you need development,
+            design, or both - let's create something amazing together!
+        </p>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
+            <a href="mailto:your.email@example.com"
+            class="p-6 bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-primary transition-all hover:scale-105 scroll-animate">
+            <svg class="w-8 h-8 mx-auto mb-3 text-primary" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+        </path>
+        </svg>
+            <p class="font-medium">Email</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400">piseykalipkc@gmail.com</p>
+        </a>
+            <a href="https://www.linkedin.com/in/sat-pisey/" target="_blank" rel="noopener noreferrer"
+            class="p-6 bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-primary transition-all hover:scale-105 scroll-animate">
+            <svg class="w-8 h-8 mx-auto mb-3 text-primary" fill="currentColor" viewBox="0 0 24 24">
+        <path
+            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+        </svg>
+            <p class="font-medium">LinkedIn</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Sat Pisey</p>
+        </a>
+            <a href="https://github.com/piseysat" target="_blank" rel="noopener noreferrer"
+            class="p-6 bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-primary transition-all hover:scale-105 scroll-animate">
+            <svg class="w-8 h-8 mx-auto mb-3 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.744.083-.729.083-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.833 2.809 1.304 3.495.997.108-.775.419-1.305.762-1.605-2.665-.305-5.467-1.334-5.467-5.94 0-1.312.468-2.382 1.235-3.222-.124-.303-.536-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.5 11.5 0 0 1 6.003 0c2.292-1.552 3.3-1.23 3.3-1.23.653 1.653.241 2.873.118 3.176.77.84 1.235 1.91 1.235 3.222 0 4.61-2.804 5.633-5.475 5.93.43.371.823 1.102.823 2.222 0 1.606-.015 2.898-.015 3.293 0 .322.216.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+            </svg>
+            <p class="font-medium">GitHub</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400">@piseysat</p>
+        </a>
+        </div>
+
+        <!-- Contact Form -->
+            <div
+            class="bg-white dark:bg-gray-900 p-8 rounded-lg border border-gray-200 dark:border-gray-700 scroll-animate">
+            <form action="mailto:your.email@example.com" method="POST" enctype="text/plain">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+            <input type="text" name="name" placeholder="Your Name" required
+            class="px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:border-primary dark:bg-gray-800 transition-colors">
+            <input type="email" name="email" placeholder="Your Email" required
+            class="px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:border-primary dark:bg-gray-800 transition-colors">
+        </div>
+            <textarea name="message" rows="4" placeholder="Your Message" required
+            class="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:border-primary mb-4 dark:bg-gray-800 transition-colors"></textarea>
+            <button type="submit"
+            class="w-full sm:w-auto px-8 py-3 bg-primary hover:bg-primary-dark text-white rounded-lg font-medium transition-all hover:scale-105">
+            Send Message
+        </button>
+        </form>
+        </div>
+        </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 px-4 sm:px-6 lg:px-8 border-t border-gray-200 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto text-center text-gray-600 dark:text-gray-400">
+            <p>&copy; 2026 Sat Pisey. All rights reserved.</p>
+            <p class="text-sm mt-2">Last updated: July
+            2026</p>
+        </div>
+    </footer>
+
+    <!-- Project Modal -->
+        <div id="projectModal" class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-50 overflow-y-auto">
+        <div class="min-h-screen px-4 py-8 flex items-center justify-center">
+        <div class="bg-white dark:bg-gray-900 rounded-lg max-w-4xl w-full border border-gray-200 dark:border-gray-700 relative animate-scaleIn"
+        role="dialog" aria-modal="true">
+        <button id="closeModal"
+        ="absolute top-4 right-4 p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors z-10"
+        aria-label="Close modal">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+        </path>
+    </svg>
+</button>
+        <div id="modalContent" class="p-8">
+        <!-- Content will be dynamically inserted -->
+    </div>
+    </div>
+    </div>
+    </div>
+    <script defer src="js/script.js"></script>
+</body>
+</html>
+
